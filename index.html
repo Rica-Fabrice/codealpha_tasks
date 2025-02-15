@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        
+        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Add a new task..." required>
+            <input type="date" id="taskDate" title="Select the date for the task" required>
+            <select id="taskPriority" title="Task Priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button id="addTaskBtn" class="add-btn">Add <i class="fa-solid fa-plus"></i></button>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <div class="filters">
+            <button type="button" id="all-btn" class="filter-btn active">All <i class="fa-solid fa-list"></i></button>
+            <button type="button" data-filter="completed" id="completed-btn" class="filter-btn">Completed <i class="fa-solid fa-check"></i></button>
+            <button type="button" data-filter="pending" id="pending-btn" class="filter-btn">Pending <i class="fa-solid fa-spinner"></i></button>
+        </div>
+
+        <ul id="taskList" class="task-container"></ul>
+
+        <p id="taskCounter">Tasks: 0</p>
+
+        <button id="clearTasks" class="delete-btn">Clear All <i class="fa-solid fa-trash"></i></button>
+    </div>
+    
+    <div id="confirmDialog" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to delete all tasks?</p>
+            <button type="button" id="confirmYes" class="confirm-btn">Yes</button>
+            <button type="button" id="confirmNo" class="cancel-btn">No</button>
+        </div>
+    </div>
+
+    <div id="deleteTaskDialog" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to delete this task?</p>
+            <button type="button" id="confirmDeleteYes" class="confirm-btn">Yes</button>
+            <button type="button" id="confirmDeleteNo" class="cancel-btn">No</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
